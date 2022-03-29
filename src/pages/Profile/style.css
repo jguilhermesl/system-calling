@@ -1,58 +1,64 @@
 .container {
-    width: 100%;
-    height: 65vh;
-
-    padding: 20px 20px;
-    
-    display: flex;
+    background: #F9F9F9;
+    width: 95%;
+    margin: 0 auto;
+    border-radius: 10px;
+    height: 100%;
 }
 
 .formProfile {
-    width: 77.8%;
     display: flex;
-    flex-direction: row;
-    position: absolute;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
 }
 
 .photoProfile {
-    width: 40%;
-    position: relative;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 22%;
+    position: relative;
 }
 
 .photoProfile input {
-    opacity: 0;
-    width: 250px;
-    height: 250px;
-    cursor: pointer;
     position: absolute;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
     border-radius: 50%;
     z-index: 10;
 }
 
 .iconUploadProfile {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 250px;
-    height: 250px;
     color: #fff;
-    font-size: 1rem;
+    font-size: 3rem;
     position: absolute;
 }
 
 .photoProfile svg {
-    color: #fff;
-    font-size: 4rem;
+    color: #000;
+}
+
+.textProfile {
+    padding-top: 3rem;
 }
 
 .formProfile img {
-    left: 1rem;
-    width: 250px;
-    height: 250px;
     border-radius: 50%;
 }
+
+.inputTextProfile {
+    width: 350px;
+    height: 35px;
+    border: 0.6px solid #8E8383;
+    border-radius: 5px;
+    padding-left: 10px;
+    margin-top: 10px;
+    outline: none;
+}
+
 .textProfile label {
     margin-top: 10px;
 }
@@ -60,19 +66,15 @@
 .textProfile {
     display: flex;
     flex-direction: column;
-}
-
-.textProfile input {
-    width: 400px;
-    height: 35px;
+    justify-content: left;
 }
 
 .textProfile button {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
-    height: 40px;
+    width: 250px;
+    height: 40px; 
     background: #000;
     color: #fff;
     font-size: 1.2rem;
@@ -80,13 +82,13 @@
     outline: none;
     border-radius: 5px;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-    margin: 30px auto 0 auto;
     cursor: pointer;
     transition: opacity 0.4s;
+    margin: 1rem auto;
 }
 
 .buttonSignOut {
-    width: 200px;
+    width: 150px;
     color: #fff;
     height: 30px;
     font-weight: 600;
@@ -98,8 +100,21 @@
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     cursor: pointer;
     transition: opacity 0.4s;
-    margin: 200px 0 0 0;
     display: flex;
     align-items: center;
     justify-content: center;
+    position: absolute;
+    right: 1rem;
+    cursor: pointer;
+    z-index: 9;
+}
+
+@media screen and (max-width: 400px) {
+    .buttonSignOut {
+        width: 60px;
+    }
+
+    .inputTextProfile {
+        width: 300px;
+    }
 }

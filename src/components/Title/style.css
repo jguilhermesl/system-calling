@@ -2,11 +2,13 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin: 1em 0;
     border-radius: 5px;
     background-color: #e2e1e1;
     padding: .8em;
     font-size: 1.2rem;
+    width: 95%;
+    margin: 1em auto;
+    position: relative;
 }
 
 .title span {
