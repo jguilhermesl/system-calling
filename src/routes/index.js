@@ -7,6 +7,8 @@ import Register from '../pages/Register'
 import Dashboard from '../pages/Dashboard'
 import Profile from '../pages/Profile'
 import Customers from '../pages/Customers'
+import New from '../pages/New';
+import AllCustomers from '../pages/AllCustomers'
 
 export default function MainRoutes() {
     return (
@@ -18,6 +20,8 @@ export default function MainRoutes() {
                 <Route exact path="/dashboard" component={Dashboard} isPrivate />
                 <Route exact path="/profile" component={Profile} isPrivate />
                 <Route exact path="/customers" component={Customers} isPrivate />
+                <Route exact path="/new" component={New} isPrivate />
+                <Route exact path="/allcustomers" component={AllCustomers} isPrivate />
             </Switch>
         </>
     )

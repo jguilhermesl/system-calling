@@ -8,6 +8,7 @@
 
 .formProfile {
     display: flex;
+    align-items: center;
     justify-content: space-evenly;
     flex-wrap: wrap;
 }
@@ -18,6 +19,7 @@
     align-items: center;
     justify-content: center;
     min-width: 22%;
+    height: 300px;
     position: relative;
 }
 
@@ -38,29 +40,36 @@
 }
 
 .photoProfile svg {
-    color: #000;
+    color: #fff;
 }
 
 .textProfile {
-    padding-top: 3rem;
+    padding-top: 1rem;
 }
 
 .formProfile img {
     border-radius: 50%;
+    width: 100%;
+    height: 100%;
 }
 
 .inputTextProfile {
-    width: 350px;
-    height: 35px;
-    border: 0.6px solid #8E8383;
+    min-width: 300px;
+    max-width: 360px;
+    height: 40px;
+    border: 0.6px solid #000;
     border-radius: 5px;
     padding-left: 10px;
-    margin-top: 10px;
+    margin: 10px 0;
     outline: none;
+    font-size: 1rem;
 }
 
 .textProfile label {
     margin-top: 10px;
+    color: #6c63ff;
+    font-weight: 700;
+    font-size: 1.2rem;
 }
 
 .textProfile {
@@ -73,9 +82,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 250px;
+    width: 350px;
     height: 40px; 
-    background: #000;
+    background: #6c63ff;
     color: #fff;
     font-size: 1.2rem;
     border: none;

@@ -5,7 +5,7 @@
 
     width: 250px;
     height: 100vh;
-    background: #181C2e;
+    background: #000;
     position: fixed;
     left: 0rem;
     z-index: 10;
@@ -14,7 +14,7 @@
 .imageWrapperHeader {
     width: 250px;
     height: 25vh;
-    background: url(../../assets/images.jfif);
+    background-color: #6c63ff;
 
     display: flex;
     justify-content: center;
@@ -37,6 +37,7 @@
     display: flex;
     margin-top: 9rem;
     flex-direction: column;
+    border-top: 2px solid rgb(82, 77, 77);
 }
 
 .sidebar li {
@@ -49,7 +50,7 @@
     transition: 0.5s;
 }
 .sidebar li:hover{
-    background: #ab52c5;
+    background: #6c63ff;
 }
 
 .sidebar li svg {

@@ -1,0 +1,98 @@
+.formNewCall {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 9rem;
+    flex-wrap: wrap;
+}
+
+.formTextNewCall {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+}
+.formTextNewCall label {
+    margin-top: 10px;
+    color: #6c63ff;
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+.formNewCall select {
+    width: 350px;
+    height: 40px;
+    border: 0.6px solid #000;
+    border-radius: 5px;
+    padding-left: 10px;
+    margin-top: 5px;
+    outline: none;
+    font-size: 1rem;
+}
+
+.inputStatus {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+textarea {
+    width: 350px;
+    height: 200px;
+    border: 0.6px solid #000;
+    border-radius: 5px;
+    padding-left: 10px;
+    margin-top: 5px;
+    outline: none;
+    color: #000;
+    padding-top: 10px;
+}
+
+::-webkit-input-placeholder  { 
+    color:rgb(48, 48, 48); 
+    font-size: 1rem;
+}
+
+.formNewCall button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 350px;
+    height: 40px; 
+    background: #6c63ff;
+    color: #fff;
+    font-size: 1.2rem;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    cursor: pointer;
+    transition: opacity 0.4s;
+    margin: 1rem auto;
+}
+
+.imageNewCall {
+    margin-top: 4rem;
+}
+
+@media screen and (max-width: 1200px) {
+    .formNewCall {
+        flex-direction: column-reverse;
+        gap: 0rem;
+        align-items: center;
+    }
+
+    .imageNewCall {
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+    }
+
+    .imageNewCall img {
+        height: 60%;
+        width: 60%;
+    }
+
+    .formTextNewCall {
+        margin-top: 0rem;
+    }
+}
