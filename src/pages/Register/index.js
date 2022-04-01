@@ -33,7 +33,7 @@ function Register() {
                     <input className="input" placeholder='Nome' value={nome} onChange={(e) => setNome(e.target.value)} />
                     <input className="input" placeholder='Telefone' value={phone} onChange={(e) => setPhone(e.target.value)} />
                     <input className="input" placeholder='Email' value={email} onChange={(e) => setEmail(e.target.value)} />
-                    <input className="input" placeholder='Senha' value={password} onChange={(e) => setPassword(e.target.value)} />
+                    <input className="input" type="password" placeholder='Senha' value={password} onChange={(e) => setPassword(e.target.value)} />
                 </div>
                 <button className="buttonRegister" type="submit">{loadingAuth ? <div className="loading"></div> : 'Cadastrar'}</button>
             </form>

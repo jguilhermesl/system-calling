@@ -103,6 +103,7 @@ table th {
 }
 
 .buttonEdit {
+    color: #000;
     width: 28px;
     height: 28px;
     font-size: 1.2rem;
@@ -110,6 +111,22 @@ table th {
     border: none;
     outline: none;
     border-radius: 5px;
+    margin-right: 5px;
+}
+
+.buttonDelete {
+    width: 28px;
+    height: 28px;
+    font-size: 1.2rem;
+    background: red;
+    border: none;
+    outline: none;
+    margin-right: 5px;
+    border-radius: 5px;
+}
+
+button {
+    cursor: pointer;
 }
 
 @media screen and (max-width: 600px) {

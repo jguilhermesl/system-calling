@@ -22,6 +22,7 @@ export default function MainRoutes() {
                 <Route exact path="/customers" component={Customers} isPrivate />
                 <Route exact path="/new" component={New} isPrivate />
                 <Route exact path="/allcustomers" component={AllCustomers} isPrivate />
+                <Route exact path="/new/:id" component={New} isPrivate />
             </Switch>
         </>
     )

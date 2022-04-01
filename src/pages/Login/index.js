@@ -26,7 +26,7 @@ function Login() {
                 <form onSubmit={handleSubmit}>
                     <div className="inputsLogin">
                         <input className="input" placeholder='Email' value={email} onChange={(e) => setEmail(e.target.value)} />
-                        <input className="input" placeholder='Senha' value={password} onChange={(e) => setPassword(e.target.value)} />
+                        <input className="input" placeholder='Senha' type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
                     </div>
                     <p className="forgotPassword">Forgot Password?</p>
                     <button type="submit" className="buttonLogIn">{loadingAuth ? <div className="loading"></div> : 'Log In'} </button>

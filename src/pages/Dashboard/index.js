@@ -4,10 +4,13 @@ import './style.css'
 
 import Header from '../../components/Header'
 import Title from '../../components/Title'
-import { FiMessageCircle, FiPlus, FiSearch, FiEdit2 } from 'react-icons/fi'
+import Modal from '../../components/Modal'
+import { FiMessageCircle, FiPlus, FiSearch, FiEdit2, FiDelete } from 'react-icons/fi'
 import { Link } from 'react-router-dom'
 import firebase from '../../services/firebaseConnection'
 import { format} from 'date-fns'
+
+import { toast } from 'react-toastify'
 
 export default function Dashboard() {
 
@@ -17,6 +20,9 @@ export default function Dashboard() {
     const [loadingMore, setLoadingMore] = useState(false)
     const [isEmpty, setIsEmpty] = useState(false)
     const [lastDocs, setLastDocs] = useState()
+
+    const [showPostModal, setShowPostModal] = useState(false)
+    const [detail, setDetail] = useState()
 
 
     useEffect( () => {
@@ -45,6 +51,7 @@ export default function Dashboard() {
                 snapshot.forEach( (doc) => {
          
                     lista.push({
+                        id: doc.id,
                         cliente: doc.data().cliente,
                         assunto: doc.data().assunto,
                         clienteId: doc.data().clienteId,
@@ -63,6 +70,44 @@ export default function Dashboard() {
         }
     }
 
+    function togglePostModal(item) {
+        setShowPostModal(!showPostModal) // se está true... muda para falso / se estiver false... muda para true
+        setDetail(item)
+
+    }
+
+    async function deleteCall(id) {
+        await firebase.firestore().collection('calls')
+        .doc(id)
+        .delete()
+        .then( () => {
+            toast.success(`Chamado deletado com sucesso.`)
+            async function loadCallsAgain() {
+                await firebase.firestore().collection('calls')
+                .get()
+                .then ( (snapshot) => {
+                    let lista = [];
+
+                    snapshot.forEach( (doc) => {
+                        lista.push({
+                            id: doc.id,
+                            assunto: doc.data().assunto,
+                            cliente: doc.data().cliente,
+                            clienteId: doc.data().clienteId,
+                            complemento: doc.data().complemento,
+                            created: doc.data().created,
+                            status: doc.data().status,
+                            userId: doc.data().userId,
+                            createdFormated: format(doc.data().created.toDate(), 'dd/MM/yyyy')
+                        })
+                    })
+                    console.log(lista)
+                    setCalls(lista)
+                })
+            }
+            loadCallsAgain()
+            })
+    }
 
 
     return (
@@ -97,7 +142,7 @@ export default function Dashboard() {
                                 </tr>
                             </thead>
                             <tbody>
-                                {calls.map((item) => (
+                                {calls.map( (item) => (
                                 <tr>
                                     <td data-label="Cliente">{item.cliente}</td>
                                     <td data-label="Assunto">{item.assunto}</td>
@@ -106,8 +151,9 @@ export default function Dashboard() {
                                     </td>
                                     <td data-label="Cadastrado">{item.createdFormated}</td>
                                     <td data-label="#" className="buttonsTable">
-                                        <button className="buttonSearch"><FiSearch /></button>
-                                        <button className="buttonEdit"><FiEdit2 /></button>
+                                        <button className="buttonSearch" onClick={() => togglePostModal(item)} ><FiSearch /></button>
+                                        <Link to={`/new/${item.id}`}><button className="buttonEdit"><FiEdit2 /></button></Link>
+                                        <button className="buttonDelete" onClick={() => deleteCall(item.id)}><FiDelete /></button>
                                     </td>
                                 </tr>))}
                                 
@@ -117,6 +163,13 @@ export default function Dashboard() {
                     )
                     }
                 </div>}
+
+                {showPostModal && (
+                    <Modal 
+                    conteudo={detail}
+                    close={togglePostModal}
+                    />
+                )}
             </div>
         </div>
 
