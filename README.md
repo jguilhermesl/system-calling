@@ -3,13 +3,13 @@
 <!---Esses são exemplos. Veja https://shields.io para outras pessoas ou para personalizar este conjunto de escudos. Você pode querer incluir dependências, status do projeto e
  informações de licença aqui--->
 
-Application video coming soon...
+<img src="./src/assets/Vídeo.gif" alt="video showing app"/>
 
 > System for better management of a company's services and customers.
 
-### Aplication link
+### :rocket: Aplication link
 
-Link: <a>http://jgsl-systemcalling.app</a>
+Link: <a>http://jgsl-systemcalling.netlify.app</a>
 
 ### 🔧 Adjustments and improvements
 
@@ -104,9 +104,9 @@ Before starting :checkered_flag:, you need to have [Git](https://git-scm.com) an
 
 ```bash
 # Clone this project
-$ git clone https://github.com/Kayke-Fujinaka/HealthyFood
+$ git clone https://github.com/jguilhermesl/system-calling
 # Access
-$ cd teste-gcb
+$ cd system-calling
 # Install dependencies
 $ yarn or npm 
 # Run the project
